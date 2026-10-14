@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Programa de Liderazgo Local y Desarrollo Territorial 2026–2027 | Expertos Chile</title>
+  <meta name="description" content="Programa de 14 meses (noviembre 2026 a diciembre 2027) para formar dirigentes sociales y equipos municipales: del diagnóstico participativo a proyectos territoriales concretos y financiables. UDIES y Expertos Chile SpA.">
+  <meta property="og:title" content="Programa de Liderazgo Local y Desarrollo Territorial 2026–2027">
+  <meta property="og:description" content="De la queja a la propuesta: 4 fases, 12 módulos y proyectos listos para postular a fondos públicos y privados.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#102640">
+
+  <!-- Estilos generales del sitio (opcional: la página funciona sin este archivo) -->
+  <link rel="stylesheet" href="estilo.css">
+
+  <style>
+    /* Base mínima de la cabecera (baja especificidad: estilo.css manda si existe) */
+    :where(body){margin:0}
+    :where(body > header nav){display:flex;flex-wrap:wrap;gap:.35rem 1.1rem;padding:.9rem 1.2rem;font-family:Arial,Helvetica,sans-serif}
+    :where(body > header nav a){color:#102640;font-weight:700;text-decoration:none}
+    :where(body > footer){padding:1.4rem 1.2rem;font-family:Arial,Helvetica,sans-serif;font-size:.9rem}
+
+    html{scroll-behavior:smooth}
+
+    #pldt{
+      --ink:#102640; --ink2:#1c3b66; --paper:#f2f5f8; --line:#d3dce5; --muted:#4f6377;
+      --blue:#2459a9; --sun:#f0c24b; --go:#2f8f5b; --wait:#c98a12; --stop:#c0443a;
+      color:var(--ink); background:#fff;
+      font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:1.6;
+    }
+    #pldt *{box-sizing:border-box}
+    #pldt h1,#pldt h2,#pldt h3{
+      font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+      font-weight:700; line-height:1.15; margin:0; letter-spacing:-.01em;
+    }
+    #pldt p{margin:0 0 1em}
+    #pldt a{color:var(--blue)}
+    #pldt .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+    #pldt :focus-visible{outline:3px solid #7aa7f0;outline-offset:3px}
+
+    /* ---------- Botones ---------- */
+    #pldt .btn{display:inline-block;padding:13px 22px;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid transparent;transition:background .15s,border-color .15s}
+    #pldt .btn-main{background:var(--sun);color:var(--ink)}
+    #pldt .btn-main:hover{background:#f6d273}
+    #pldt .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55)}
+    #pldt .btn-ghost:hover{border-color:#fff}
+    #pldt .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+    /* ---------- Encabezado ---------- */
+    #pldt .hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;padding:60px 0 52px}
+    #pldt .contour{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#fff;stroke-width:1.1;opacity:.09;pointer-events:none}
+    #pldt .hero .wrap{position:relative}
+    #pldt .hero .kicker{margin:0 0 14px;color:var(--sun);font-weight:700;font-size:.95rem}
+    #pldt .hero h1{font-size:clamp(2.1rem,5.6vw,3.7rem);max-width:19ch}
+    #pldt .hero .lead{max-width:58ch;margin:20px 0 0;font-size:1.15rem;color:#d7e2ee}
+    #pldt .facts{display:flex;flex-wrap:wrap;gap:20px 38px;margin:30px 0 0;padding:0}
+    #pldt .facts div{border-left:3px solid var(--sun);padding-left:12px}
+    #pldt .facts dt{font-size:.82rem;color:#aebfd2}
+    #pldt .facts dd{margin:0;font-weight:700}
+
+    /* Cronograma: la pieza central del encabezado */
+    #pldt .route{margin-top:44px}
+    #pldt .route h2{font-size:1.05rem;font-family:Arial,Helvetica,sans-serif;font-weight:700;color:#aebfd2;letter-spacing:0;margin-bottom:10px}
+    #pldt .r14{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:2px}
+    #pldt .yr{font-size:.8rem;font-weight:700;color:#aebfd2;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:2px}
+    #pldt .mo{font-size:.72rem;text-align:center;color:#8fa4ba;padding:3px 0}
+    #pldt .phase-label{margin:16px 0 5px;font-size:.95rem;color:#fff;text-decoration:none;display:block}
+    #pldt .phase-label b{color:var(--sun)}
+    #pldt .track{background:rgba(255,255,255,.07);border-radius:4px}
+    #pldt .bar{display:block;height:16px;border-radius:4px;background:var(--sun);transform-origin:left center;grid-column:var(--s) / var(--e)}
+    #pldt .bar:hover{background:#f6d273}
+    @media (prefers-reduced-motion:no-preference){
+      #pldt .bar{animation:grow .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * .22s + .25s)}
+      @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    }
+
+    /* ---------- Secciones ---------- */
+    #pldt .sec{padding:68px 0}
+    #pldt .sec.alt{background:var(--paper)}
+    #pldt .sec h2{font-size:clamp(1.65rem,3.6vw,2.3rem);max-width:26ch}
+    #pldt .sec .intro{max-width:64ch;margin-top:16px;color:#2b4058}
+
+    /* Problema: lo que se mide / lo que se pasa por alto */
+    #pldt .split{display:grid;grid-template-columns:1fr 1fr;margin-top:34px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+    #pldt .side{padding:26px 28px}
+    #pldt .side h3{font-size:1.2rem;margin-bottom:12px}
+    #pldt .side ul{margin:0;padding-left:1.1em}
+    #pldt .side li{margin-bottom:.35em}
+    #pldt .side.tec{background:#fff}
+    #pldt .side.psi{background:var(--ink2);color:#fff}
+    #pldt .side.psi h3{color:var(--sun)}
+    #pldt .result{margin-top:26px;max-width:64ch;font-size:1.08rem;border-left:4px solid var(--stop);padding-left:16px}
+
+    /* Qué hace el programa */
+    #pldt .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:36px}
+    #pldt .pillar{border-top:3px solid var(--ink);padding-top:14px}
+    #pldt .pillar h3{font-size:1.25rem;margin-bottom:8px}
+    #pldt .pillar p{margin:0;color:#2b4058}
+    #pldt .tl{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-weight:700;font-size:.95rem}
+    #pldt .tl span::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;background:var(--c)}
+
+    /* Para quién */
+    #pldt .who{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:34px}
+    #pldt .who h3{font-size:1.2rem;margin-bottom:10px}
+    #pldt .who ul{margin:0;padding-left:1.1em}
+    #pldt .who li{margin-bottom:.4em}
+
+    /* Hoja de ruta */
+    #pldt .phases{margin-top:34px;border-bottom:1px solid var(--line)}
+    #pldt .toolbar{display:flex;justify-content:flex-end;margin-top:22px}
+    #pldt .toolbar button{font:inherit;font-size:.92rem;font-weight:700;color:var(--blue);background:none;border:0;cursor:pointer;text-decoration:underline;padding:4px 0}
+    #pldt details.phase{border-top:1px solid var(--line);scroll-margin-top:16px}
+    #pldt details.phase summary{display:grid;grid-template-columns:56px 1fr auto;gap:6px 16px;align-items:baseline;padding:22px 4px;cursor:pointer;list-style:none}
+    #pldt details.phase summary::-webkit-details-marker{display:none}
+    #pldt .pnum{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:2.6rem;font-weight:700;color:var(--blue);line-height:1}
+    #pldt .ptitle{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;font-size:1.35rem;font-weight:700;line-height:1.2}
+    #pldt .pdate{display:block;font-family:Arial,Helvetica,sans-serif;font-size:.92rem;font-weight:400;color:var(--muted);margin-top:4px}
+    #pldt details.phase summary::after{content:"+";font-size:1.7rem;line-height:1;color:var(--blue);font-weight:700;width:1.2em;text-align:center}
+    #pldt details.phase[open] summary::after{content:"\2212"}
+    #pldt .pbody{padding:0 4px 28px 76px;max-width:880px}
+    #pldt .pbody > p{color:#2b4058}
+    #pldt .mods{list-style:none;margin:18px 0 0;padding:0}
+    #pldt .mods li{display:grid;grid-template-columns:112px 1fr;gap:4px 16px;padding:12px 0;border-top:1px dashed var(--line)}
+    #pldt .mods .m{font-weight:700;color:var(--blue);font-size:.92rem}
+    #pldt .mods .m small{display:block;font-weight:400;color:var(--muted);font-size:.82rem}
+    #pldt .mods strong{display:block}
+    #pldt .deliver{margin-top:16px;padding:14px 16px;background:var(--paper);border-left:4px solid var(--go);border-radius:0 6px 6px 0}
+    #pldt .deliver b{display:block;font-size:.85rem;color:var(--muted);font-weight:700;margin-bottom:2px}
+
+    /* Indicadores */
+    #pldt table{width:100%;border-collapse:collapse;margin-top:32px;background:#fff}
+    #pldt th,#pldt td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line)}
+    #pldt thead th{font-size:.88rem;color:var(--muted);border-bottom:2px solid var(--ink)}
+    #pldt tbody th{font-weight:700;width:22%}
+    #pldt .fund{margin-top:34px}
+    #pldt .fund h3{font-size:1.15rem;margin-bottom:10px}
+    #pldt .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+    #pldt .chips li{padding:6px 12px;border:1.5px solid var(--ink);border-radius:6px;font-weight:700;font-size:.92rem;background:#fff}
+
+    /* Cierre */
+    #pldt .cta{background:var(--ink);color:#fff;padding:68px 0}
+    #pldt .cta h2{font-size:clamp(1.7rem,4vw,2.5rem);max-width:20ch}
+    #pldt .cta p{max-width:58ch;color:#d7e2ee;margin-top:16px}
+    #pldt .more{margin-top:46px;padding-top:24px;border-top:1px solid rgba(255,255,255,.25);display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    #pldt .more a{color:#fff;font-weight:700;text-decoration:none;border-bottom:2px solid var(--sun);display:inline-block;padding-bottom:2px}
+    #pldt .more p{margin:6px 0 0;font-size:.92rem;color:#aebfd2}
+    #pldt .note{margin-top:34px;font-size:.86rem;color:#aebfd2;max-width:70ch}
+
+    /* ---------- Móvil ---------- */
+    @media (max-width:820px){
+      #pldt .pillars,#pldt .who,#pldt .more{grid-template-columns:1fr}
+      #pldt .split{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      #pldt{font-size:16.5px}
+      #pldt .hero{padding:40px 0 40px}
+      #pldt .sec,#pldt .cta{padding:48px 0}
+      #pldt .btn{width:100%;text-align:center}
+      #pldt details.phase summary{grid-template-columns:40px 1fr auto;padding:18px 0}
+      #pldt .pnum{font-size:2rem}
+      #pldt .ptitle{font-size:1.15rem}
+      #pldt .pbody{padding:0 0 24px 0}
+      #pldt .mods li{grid-template-columns:1fr}
+      #pldt table,#pldt thead,#pldt tbody,#pldt tr,#pldt th,#pldt td{display:block}
+      #pldt thead{position:absolute;left:-9999px}
+      #pldt tr{border:1px solid var(--line);border-radius:8px;margin-bottom:12px;padding:6px 0}
+      #pldt tbody th{width:auto;border:0;padding-bottom:2px}
+      #pldt td{border:0;padding:6px 16px}
+      #pldt td::before{content:attr(data-l);display:block;font-size:.78rem;color:var(--muted)}
+      #pldt .mo{font-size:.62rem}
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav aria-label="Navegación principal">
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Servicios</a>
+      <a href="casos.html">Casos</a>
+      <a href="simulador.html">Simulador</a>
+      <a href="programa-liderazgo.html" aria-current="page">Programa de liderazgo</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="quienes-somos.html">Quiénes somos</a>
+    </nav>
+  </header>
+
+  <main id="pldt">
+
+    <!-- ENCABEZADO -->
+    <section class="hero">
+      <svg class="contour" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><path d="M-20 142 L20 158 L60 171 L100 178 L140 180 L180 175 L220 169 L260 163 L300 162 L340 165 L380 170 L420 174 L460 174 L500 168 L540 157 L580 142 L620 128 L660 119 L700 116 L740 120 L780 127 L820 135 L860 140 L900 140 L940 136 L980 132 L1020 131 L1060 135 L1100 145 L1140 158 L1180 173 L1220 183"/><path d="M-20 214 L20 222 L60 223 L100 218 L140 211 L180 205 L220 203 L260 205 L300 210 L340 214 L380 214 L420 208 L460 197 L500 182 L540 168 L580 159 L620 157 L660 161 L700 169 L740 177 L780 182 L820 183 L860 180 L900 176 L940 175 L980 179 L1020 189 L1060 202 L1100 216 L1140 226 L1180 230 L1220 227"/><path d="M-20 266 L20 261 L60 254 L100 247 L140 245 L180 246 L220 251 L260 254 L300 254 L340 248 L380 237 L420 222 L460 209 L500 200 L540 198 L580 202 L620 211 L660 219 L700 225 L740 226 L780 224 L820 220 L860 219 L900 223 L940 232 L980 246 L1020 259 L1060 269 L1100 273 L1140 269 L1180 260 L1220 250"/><path d="M-20 296 L20 289 L60 286 L100 287 L140 291 L180 294 L220 294 L260 288 L300 277 L340 263 L380 249 L420 241 L460 239 L500 244 L540 253 L580 262 L620 268 L660 270 L700 268 L740 264 L780 263 L820 267 L860 276 L900 289 L940 303 L980 312 L1020 315 L1060 311 L1100 302 L1140 291 L1180 282 L1220 277"/><path d="M-20 327 L20 327 L60 331 L100 334 L140 334 L180 328 L220 317 L260 303 L300 290 L340 282 L380 280 L420 286 L460 295 L500 305 L540 311 L580 314 L620 312 L660 309 L700 307 L740 311 L780 320 L820 333 L860 346 L900 355 L940 358 L980 353 L1020 343 L1060 332 L1100 323 L1140 318 L1180 318 L1220 320"/><path d="M-20 371 L20 374 L60 374 L100 368 L140 357 L180 344 L220 331 L260 323 L300 322 L340 327 L380 337 L420 348 L460 355 L500 357 L540 356 L580 353 L620 352 L660 355 L700 364 L740 376 L780 389 L820 397 L860 400 L900 395 L940 385 L980 373 L1020 363 L1060 358 L1100 357 L1140 360 L1180 362 L1220 361"/><path d="M-20 414 L20 408 L60 398 L100 384 L140 372 L180 364 L220 363 L260 369 L300 380 L340 390 L380 398 L420 401 L460 400 L500 397 L540 396 L580 399 L620 407 L660 419 L700 431 L740 440 L780 442 L820 437 L860 426 L900 414 L940 403 L980 398 L1020 397 L1060 400 L1100 402 L1140 401 L1180 396 L1220 386"/><path d="M-20 438 L20 425 L60 413 L100 405 L140 405 L180 412 L220 422 L260 434 L300 442 L340 445 L380 444 L420 441 L460 440 L500 443 L540 451 L580 462 L620 474 L660 482 L700 484 L740 478 L780 467 L820 454 L860 444 L900 438 L940 437 L980 440 L1020 442 L1060 442 L1100 436 L1140 427 L1180 416 L1220 408"/><path d="M-20 454 L20 447 L60 447 L100 454 L140 465 L180 477 L220 485 L260 489 L300 488 L340 485 L380 484 L420 486 L460 494 L500 505 L540 516 L580 524 L620 525 L660 519 L700 508 L740 495 L780 484 L820 478 L860 477 L900 479 L940 482 L980 482 L1020 477 L1060 468 L1100 458 L1140 450 L1180 448 L1220 452"/><path d="M-20 489 L20 496 L60 508 L100 520 L140 529 L180 533 L220 532 L260 530 L300 528 L340 530 L380 537 L420 548 L460 559 L500 566 L540 567 L580 561 L620 549 L660 535 L700 524 L740 518 L780 517 L820 519 L860 522 L900 523 L940 518 L980 510 L1020 500 L1060 492 L1100 490 L1140 495 L1180 507 L1220 521"/><path d="M-20 551 L20 564 L60 573 L100 577 L140 577 L180 574 L220 572 L260 574 L300 580 L340 591 L380 601 L420 608 L460 608 L500 602 L540 590 L580 576 L620 564 L660 558 L700 556 L740 559 L780 563 L820 563 L860 559 L900 551 L940 542 L980 535 L1020 533 L1060 539 L1100 550 L1140 565 L1180 578 L1220 587"/></svg>
+      <div class="wrap">
+        <p class="kicker">Programa 2026–2027</p>
+        <h1>Programa de Liderazgo Local y Desarrollo Territorial</h1>
+        <p class="lead">
+          Formamos a dirigentes sociales y equipos municipales para que pasen de la
+          queja a la propuesta: diagnósticos que terminan en proyectos concretos y
+          financiables.
+        </p>
+
+        <dl class="facts">
+          <div><dt>Duración</dt><dd>14 meses, de noviembre 2026 a diciembre 2027</dd></div>
+          <div><dt>Estructura</dt><dd>4 fases y 12 módulos</dd></div>
+          <div><dt>Lo imparten</dt><dd>UDIES y Expertos Chile SpA</dd></div>
+        </dl>
+
+        <div class="btn-row">
+          <!-- Cambia este enlace por el formulario de inscripción cuando esté listo -->
+          <a class="btn btn-main" href="https://linktr.ee/udies" target="_blank" rel="noopener">Solicitar información</a>
+          <a class="btn btn-ghost" href="#hoja-de-ruta">Ver la hoja de ruta</a>
+        </div>
+
+        <div class="route" role="group" aria-label="Cronograma de 14 meses, de noviembre 2026 a diciembre 2027">
+          <h2>Los 14 meses de un vistazo</h2>
+          <div class="r14" aria-hidden="true">
+            <span class="yr" style="grid-column:1 / 3">2026</span>
+            <span class="yr" style="grid-column:3 / 15">2027</span>
+            <span class="mo">N</span><span class="mo">D</span>
+            <span class="mo">E</span><span class="mo">F</span><span class="mo">M</span><span class="mo">A</span><span class="mo">M</span><span class="mo">J</span><span class="mo">J</span><span class="mo">A</span><span class="mo">S</span><span class="mo">O</span><span class="mo">N</span><span class="mo">D</span>
+          </div>
+
+          <a class="phase-label" href="#fase-1"><b>Fase 1</b> Diagnóstico y cohesión territorial</a>
+          <div class="r14 track"><a class="bar" href="#fase-1" style="--s:1;--e:4;--i:0" aria-label="Fase 1, noviembre 2026 a enero 2027"></a></div>
+
+          <a class="phase-label" href="#fase-2"><b>Fase 2</b> Formulación de proyectos</a>
+          <div class="r14 track"><a class="bar" href="#fase-2" style="--s:4;--e:8;--i:1" aria-label="Fase 2, febrero a mayo 2027"></a></div>
+
+          <a class="phase-label" href="#fase-3"><b>Fase 3</b> IA, pilotaje y financiamiento</a>
+          <div class="r14 track"><a class="bar" href="#fase-3" style="--s:8;--e:12;--i:2" aria-label="Fase 3, junio a septiembre 2027"></a></div>
+
+          <a class="phase-label" href="#fase-4"><b>Fase 4</b> Evaluación y red de liderazgo</a>
+          <div class="r14 track"><a class="bar" href="#fase-4" style="--s:12;--e:15;--i:3" aria-label="Fase 4, octubre a diciembre 2027"></a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section class="sec" id="problema">
+      <div class="wrap">
+        <h2>Los planes territoriales miden las obras y olvidan a las personas</h2>
+        <p class="intro">
+          Un territorio no es solo lo que se construye. También es lo que la gente cree,
+          recuerda y hace todos los días. Cuando un plan mira solo una de las dos partes,
+          falla.
+        </p>
+
+        <div class="split">
+          <div class="side tec">
+            <h3>Lo que se mide: la tecnósfera</h3>
+            <ul>
+              <li>Obras públicas</li>
+              <li>Infraestructura rígida</li>
+            </ul>
+          </div>
+          <div class="side psi">
+            <h3>Lo que se pasa por alto: la psicosfera</h3>
+            <ul>
+              <li>Confianza en las instituciones</li>
+              <li>Memoria histórica</li>
+              <li>Hábitos de la comunidad</li>
+              <li>Percepción del riesgo</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="result">
+          Cuando llega un cambio o una crisis, esa brecha genera fricción, proyectos
+          abandonados y gasto ineficiente.
+        </p>
+      </div>
+    </section>
+
+    <!-- QUÉ HACE EL PROGRAMA -->
+    <section class="sec alt" id="programa">
+      <div class="wrap">
+        <h2>De la queja a la propuesta</h2>
+        <p class="intro">
+          Formamos a dirigentes sociales, profesionales municipales y líderes locales con
+          un enfoque de resiliencia sistémica y transformabilidad. Tres cosas cambian
+          en la práctica.
+        </p>
+
+        <div class="pillars">
+          <div class="pillar">
+            <h3>Proyectos con estándar público</h3>
+            <p>
+              Aprenden a hacer un diagnóstico participativo y a formular proyectos como
+              los piden los fondos públicos: SUBDERE, FNDR, FPA y fondos de innovación social.
+            </p>
+          </div>
+          <div class="pillar">
+            <h3>Tecnología e IA al alcance</h3>
+            <p>
+              Usan herramientas digitales sencillas para mapear la comunidad, recoger
+              datos locales y ordenar la gestión.
+            </p>
+          </div>
+          <div class="pillar">
+            <h3>Impacto medido en tres momentos</h3>
+            <p>Cada iniciativa se evalúa para asegurar que se sostenga en el tiempo.</p>
+            <div class="tl" aria-label="Los tres momentos: antes, durante y después">
+              <span style="--c:var(--go)">Antes</span>
+              <span style="--c:var(--wait)">Durante</span>
+              <span style="--c:var(--stop)">Después</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARA QUIÉN -->
+    <section class="sec" id="para-quien">
+      <div class="wrap">
+        <h2>Para quienes hacen que el territorio funcione</h2>
+        <div class="who">
+          <div>
+            <h3>Quiénes participan</h3>
+            <ul>
+              <li>Dirigentes sociales y juntas de vecinos</li>
+              <li>Profesionales de municipios</li>
+              <li>Líderes locales y organizaciones sin fines de lucro</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Quiénes pueden impulsarlo</h3>
+            <ul>
+              <li>Municipios y Gobiernos Regionales</li>
+              <li>Empresas, mediante Ley de Donaciones, RSE o valor compartido</li>
+            </ul>
+            <p style="margin-top:.8em;color:#2b4058">
+              Es un programa de intervención territorial de 14 meses, con métricas transparentes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOJA DE RUTA -->
+    <section class="sec alt" id="hoja-de-ruta">
+      <div class="wrap">
+        <h2>Cuatro fases que acompañan el año de gestión territorial</h2>
+        <p class="intro">
+          Cada fase termina con un entregable concreto. Abre una fase para ver sus módulos.
+        </p>
+        <div class="toolbar"><button type="button" id="toggle-all" aria-pressed="false">Abrir todas las fases</button></div>
+
+        <div class="phases">
+
+          <details class="phase" id="fase-1" open>
+            <summary>
+              <span class="pnum">1</span>
+              <span class="ptitle">Diagnóstico sistémico y cohesión territorial<span class="pdate">Noviembre 2026 a enero 2027 (3 meses)</span></span>
+            </summary>
+            <div class="pbody">
+              <p>Mapear la realidad local reconociendo cómo se relacionan la infraestructura (tecnósfera) y el tejido social (psicosfera).</p>
+              <ul class="mods">
+                <li><span class="m">Módulo 1<small>Nov 2026</small></span><span><strong>El territorio vivo</strong>Introducción a la resiliencia comunitaria y a la psicosfera–tecnósfera. ¿Cómo leer nuestro entorno más allá del mapa?</span></li>
+                <li><span class="m">Módulo 2<small>Dic 2026</small></span><span><strong>Mapeo participativo de riesgos y puntos ciegos</strong>Identificación de vulnerabilidades ambientales, sociales y de servicios básicos.</span></li>
+                <li><span class="m">Módulo 3<small>Ene 2027</small></span><span><strong>Gobernanza y liderazgo relacional</strong>Gestión de conflictos, confianza comunitaria y articulación con municipios y servicios públicos.</span></li>
+              </ul>
+              <div class="deliver"><b>Entregable</b>Mapa inicial de puntos ciegos y capacidades comunitarias de cada sector o barrio participante.</div>
+            </div>
+          </details>
+
+          <details class="phase" id="fase-2">
+            <summary>
+              <span class="pnum">2</span>
+              <span class="ptitle">Formulación de proyectos e ingeniería social<span class="pdate">Febrero a mayo 2027 (4 meses)</span></span>
+            </summary>
+            <div class="pbody">
+              <p>Traducir las necesidades de la Fase 1 en perfiles de proyecto, con el lenguaje técnico, metodológico y financiero que corresponde.</p>
+              <ul class="mods">
+                <li><span class="m">Módulo 4<small>Feb a mar 2027</small></span><span><strong>Árbol de problemas y efecto dominó</strong>Análisis de causas raíz. ¿Por qué las soluciones “parche” vuelven a fallar?</span></li>
+                <li><span class="m">Módulo 5<small>Abr 2027</small></span><span><strong>Diseño de proyectos sostenibles</strong>Introducción al marco lógico, presupuestación realista e indicadores de impacto.</span></li>
+                <li><span class="m">Módulo 6<small>May 2027</small></span><span><strong>Tecnología y datos para dirigentes</strong>Herramientas de levantamiento móvil de datos y planillas simples de control.</span></li>
+              </ul>
+              <div class="deliver"><b>Entregable</b>Dossier de anteproyectos comunitarios, listos para revisión y ajuste técnico.</div>
+            </div>
+          </details>
+
+          <details class="phase" id="fase-3">
+            <summary>
+              <span class="pnum">3</span>
+              <span class="ptitle">Inteligencia artificial, pilotaje y financiamiento<span class="pdate">Junio a septiembre 2027 (4 meses)</span></span>
+            </summary>
+            <div class="pbody">
+              <p>Potenciar la formulación con IA adaptada y postular a fondos de financiamiento comunal, regional y privado.</p>
+              <ul class="mods">
+                <li><span class="m">Módulo 7<small>Jun a jul 2027</small></span><span><strong>IA aplicada a la gestión territorial</strong>Práctica con herramientas de IA para redactar proyectos, fundamentarlos técnicamente y sistematizar actas y encuestas.</span></li>
+                <li><span class="m">Módulo 8<small>Ago 2027</small></span><span><strong>Estrategias de financiamiento y alianzas</strong>Mapeo de fuentes públicas (FNDR 8%, FPA, SUBDERE, fondos municipales) y privadas (RSE y fondos concursables).</span></li>
+                <li><span class="m">Módulo 9<small>Sep 2027</small></span><span><strong>Pilotaje en terreno (SAATS)</strong>Pruebas a pequeña escala de los proyectos diseñados.</span></li>
+              </ul>
+              <div class="deliver"><b>Entregable</b>Proyectos postulados o presentados a mesas de inversión y al municipio.</div>
+            </div>
+          </details>
+
+          <details class="phase" id="fase-4">
+            <summary>
+              <span class="pnum">4</span>
+              <span class="ptitle">Evaluar, sistematizar y formar la red de liderazgo<span class="pdate">Octubre a diciembre 2027 (3 meses)</span></span>
+            </summary>
+            <div class="pbody">
+              <p>Evaluar los aprendizajes, medir la resiliencia instalada y consolidar una red permanente de liderazgo territorial.</p>
+              <ul class="mods">
+                <li><span class="m">Módulo 10<small>Oct 2027</small></span><span><strong>Evaluación en los tres momentos</strong>Medición de resultados (antes, durante y después) y lecciones aprendidas.</span></li>
+                <li><span class="m">Módulo 11<small>Nov 2027</small></span><span><strong>Sistematización y publicación territorial</strong>Informes comunitarios para devolver los resultados a la comunidad y a las autoridades.</span></li>
+                <li><span class="m">Módulo 12<small>Dic 2027</small></span><span><strong>Seminario de cierre y constitución de la red</strong>Entrega de certificaciones y firma de compromisos de continuidad.</span></li>
+              </ul>
+              <div class="deliver"><b>Entregable</b>Informe final de impacto territorial, certificación de dirigentes y red de liderazgo constituida.</div>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INDICADORES -->
+    <section class="sec" id="indicadores">
+      <div class="wrap">
+        <h2>Cómo rendimos cuentas a la comunidad y a quienes financian</h2>
+        <p class="intro">Cuatro dimensiones, cada una con un indicador que se puede verificar.</p>
+
+        <table>
+          <thead>
+            <tr><th scope="col">Dimensión</th><th scope="col">Indicador</th><th scope="col">Impacto esperado</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Capacitación humana</th>
+              <td data-l="Indicador">Número de dirigentes y profesionales formados (mínimo 75% de asistencia)</td>
+              <td data-l="Impacto esperado">Más capacidad técnica y de gestión en el liderazgo local.</td>
+            </tr>
+            <tr>
+              <th scope="row">Proyectos formulados</th>
+              <td data-l="Indicador">Número de perfiles de proyecto terminados con estándar FNDR o SUBDERE</td>
+              <td data-l="Impacto esperado">Al menos 1 proyecto viable por comunidad o sector participante.</td>
+            </tr>
+            <tr>
+              <th scope="row">Integración tecnológica</th>
+              <td data-l="Indicador">Número de comunidades capacitadas en herramientas de IA y datos</td>
+              <td data-l="Impacto esperado">Menos tiempo de formulación y mejor fundamentación.</td>
+            </tr>
+            <tr>
+              <th scope="row">Articulación institucional</th>
+              <td data-l="Indicador">Mesas de trabajo sostenidas entre comunidad, municipio y UDIES</td>
+              <td data-l="Impacto esperado">Alianzas formalizadas e inversión territorial canalizada.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="fund">
+          <h3>Fuentes de financiamiento que se trabajan en el programa</h3>
+          <ul class="chips">
+            <li>FNDR 8%</li><li>FPA</li><li>SUBDERE</li><li>Fondos municipales</li><li>RSE</li><li>Fondos concursables</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="cta" id="contacto">
+      <div class="wrap">
+        <h2>Lleva el programa a tu territorio</h2>
+        <p>
+          Escríbenos si representas a una junta de vecinos, una organización social, un
+          municipio o una empresa con programa de inversión social. Te contamos cómo se
+          adapta a tu comunidad.
+        </p>
+        <div class="btn-row">
+          <!-- Cambia este enlace por el formulario de inscripción cuando esté listo -->
+          <a class="btn btn-main" href="https://linktr.ee/udies" target="_blank" rel="noopener">Solicitar información</a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/expertoschile" target="_blank" rel="noopener">Escribirnos por Instagram</a>
+        </div>
+
+        <div class="more">
+          <div><a href="simulador.html">Prueba el simulador</a><p>Mira cómo una decisión mueve otras piezas.</p></div>
+          <div><a href="casos.html">Revisa los casos</a><p>Ejemplos de decisiones que se propagan.</p></div>
+          <div><a href="diagnostico.html">Haz el diagnóstico</a><p>Ordena el problema antes de decidir.</p></div>
+        </div>
+
+        <p class="note">
+          Programa organizado por UDIES y Expertos Chile SpA, en articulación con redes
+          comunitarias y municipales. Las fechas y contenidos pueden ajustarse según cada territorio.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Expertos Chile · Análisis de problemas y oportunidades de mejora.</p>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+      const phases = [...document.querySelectorAll("details.phase")];
+      const btn = document.getElementById("toggle-all");
+
+      // Si se llega desde un enlace (#fase-3), abre esa fase.
+      function openFromHash() {
+        const el = location.hash ? document.querySelector(location.hash) : null;
+        if (el && el.matches("details.phase")) el.open = true;
+      }
+      window.addEventListener("hashchange", openFromHash);
+      openFromHash();
+
+      // Botón para abrir o cerrar todas las fases.
+      function sync() {
+        const all = phases.every((p) => p.open);
+        btn.textContent = all ? "Cerrar todas las fases" : "Abrir todas las fases";
+        btn.setAttribute("aria-pressed", String(all));
+      }
+      btn.addEventListener("click", () => {
+        const all = phases.every((p) => p.open);
+        phases.forEach((p) => { p.open = !all; });
+        sync();
+      });
+      phases.forEach((p) => p.addEventListener("toggle", sync));
+      sync();
+    })();
+  </script>
+
+</body>
+</html>
