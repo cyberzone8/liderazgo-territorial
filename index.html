@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Programa de Liderazgo Local y Desarrollo Territorial 2026–2027 | Expertos Chile</title>
-  <meta name="description" content="Programa de 14 meses (noviembre 2026 a diciembre 2027) para formar dirigentes sociales y equipos municipales: del diagnóstico participativo a proyectos territoriales concretos, financiables y que generan trabajo local, con un perfil de resiliencia y transformabilidad y una hoja de ruta al 2050 para cada comuna. UDIES y Expertos Chile SpA.">
+  <meta name="description" content="Programa de 10 meses (marzo a diciembre de 2027), con preparación desde noviembre de 2026, para formar dirigentes sociales y equipos municipales: del diagnóstico participativo a proyectos territoriales concretos, financiables y que generan trabajo local, con un perfil de resiliencia y transformabilidad y una hoja de ruta al 2050 para cada comuna. UDIES y Expertos Chile SpA.">
   <meta property="og:title" content="Programa de Liderazgo Local y Desarrollo Territorial 2026–2027">
-  <meta property="og:description" content="De la queja a la propuesta: 4 fases, 12 módulos y proyectos listos para postular a fondos públicos y privados, dentro de una hoja de ruta al 2050.">
+  <meta property="og:description" content="De la queja a la propuesta: preparación previa, 4 fases y 12 módulos entre marzo y diciembre de 2027, con proyectos listos para postular a fondos públicos y privados, dentro de una hoja de ruta al 2050.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#102640">
 
@@ -69,6 +69,9 @@
     #pldt .track{background:rgba(255,255,255,.07);border-radius:4px}
     #pldt .bar{display:block;height:16px;border-radius:4px;background:var(--sun);transform-origin:left center;grid-column:var(--s) / var(--e)}
     #pldt .bar:hover{background:#f6d273}
+    #pldt .bar.prep{background:transparent;border:2px dashed var(--sun)}
+    #pldt .bar.prep:hover{background:rgba(240,194,75,.25)}
+    #pldt .route .after{margin:16px 0 0;font-size:.88rem;color:#aebfd2}
     @media (prefers-reduced-motion:no-preference){
       #pldt .bar{animation:grow .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i) * .22s + .25s)}
       @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
@@ -90,12 +93,17 @@
     #pldt .side.psi{background:var(--ink2);color:#fff}
     #pldt .side.psi h3{color:var(--sun)}
     #pldt .result{margin-top:26px;max-width:64ch;font-size:1.08rem;border-left:4px solid var(--stop);padding-left:16px}
+    #pldt .traps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:34px}
+    #pldt .traps > div{border-top:3px solid var(--stop);padding-top:12px}
+    #pldt .traps h3{font-size:1.1rem;margin-bottom:6px}
+    #pldt .traps p{margin:0;font-size:.96rem;color:#2b4058}
 
     /* Qué hace el programa */
     #pldt .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:36px}
     #pldt .pillar{border-top:3px solid var(--ink);padding-top:14px}
     #pldt .pillar h3{font-size:1.25rem;margin-bottom:8px}
     #pldt .pillar p{margin:0;color:#2b4058}
+    #pldt .pillar p + p{margin-top:.7em}
     #pldt .tl{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-weight:700;font-size:.95rem}
     #pldt .tl span::before{content:"";display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;background:var(--c)}
 
@@ -118,6 +126,20 @@
     #pldt .perf .steps > div{border-top:3px solid var(--ink);padding-top:12px}
     #pldt .perf .caveat{margin-top:30px;max-width:70ch;font-size:.95rem;border-left:4px solid var(--sun);padding-left:14px}
     #pldt .perf .cite{margin-top:16px;max-width:76ch;font-size:.82rem;color:var(--muted)}
+
+    /* Método de aprendizaje */
+    #pldt .cycles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:34px 0 0;padding:0;list-style:none}
+    #pldt .cycles li{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:6px;padding:16px 18px;background:#fff}
+    #pldt .cycles b{display:block;font-size:.82rem;color:var(--blue)}
+    #pldt .cycles h3{font-size:1.15rem;margin:2px 0 6px}
+    #pldt .cycles p{margin:0 0 .5em;font-size:.95rem;color:#2b4058}
+    #pldt .cycles .where{margin:0;font-size:.84rem;font-weight:700;color:var(--muted)}
+    #pldt .sub{font-size:1.25rem;margin-top:44px}
+    #pldt .labs{max-width:880px}
+    #pldt .session{margin-top:22px;max-width:70ch;font-size:.95rem;border-left:4px solid var(--sun);padding-left:14px}
+    #pldt .levels{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0;padding:0;list-style:none}
+    #pldt .levels li{padding:8px 14px;border-radius:6px;background:var(--ink);color:#fff;font-weight:700;font-size:.92rem}
+    #pldt .levels li span{display:block;font-weight:400;font-size:.8rem;color:#aebfd2}
 
     /* Simbiosis territorial */
     #pldt .symb{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:6px;align-items:start}
@@ -150,11 +172,13 @@
     #pldt details.phase[open] summary::after{content:"\2212"}
     #pldt .pbody{padding:0 4px 28px 76px;max-width:880px}
     #pldt .pbody > p{color:#2b4058}
+    #pldt .pbody > p.cyc-line{font-size:.9rem;color:var(--muted);border-left:4px solid var(--sun);padding-left:12px}
     #pldt .mods{list-style:none;margin:18px 0 0;padding:0}
     #pldt .mods li{display:grid;grid-template-columns:112px 1fr;gap:4px 16px;padding:12px 0;border-top:1px dashed var(--line)}
     #pldt .mods .m{font-weight:700;color:var(--blue);font-size:.92rem}
     #pldt .mods .m small{display:block;font-weight:400;color:var(--muted);font-size:.82rem}
     #pldt .mods strong{display:block}
+    #pldt .mods .lab{display:block;margin-top:.5em;font-size:.93rem;color:var(--muted)}
     #pldt .deliver{margin-top:16px;padding:14px 16px;background:var(--paper);border-left:4px solid var(--go);border-radius:0 6px 6px 0}
     #pldt .deliver b{display:block;font-size:.85rem;color:var(--muted);font-weight:700;margin-bottom:2px}
 
@@ -193,7 +217,7 @@
 
     /* ---------- Móvil ---------- */
     @media (max-width:820px){
-      #pldt .pillars,#pldt .who,#pldt .more,#pldt .symb,#pldt .perf .steps,#pldt .hz{grid-template-columns:1fr}
+      #pldt .pillars,#pldt .who,#pldt .more,#pldt .symb,#pldt .perf .steps,#pldt .hz,#pldt .traps,#pldt .cycles{grid-template-columns:1fr}
       #pldt .matrix{grid-template-columns:1fr}
       #pldt .axis{display:none}
       #pldt .symb{gap:30px}
@@ -249,7 +273,8 @@
         </p>
 
         <dl class="facts">
-          <div><dt>Duración</dt><dd>14 meses, de noviembre 2026 a diciembre 2027</dd></div>
+          <div><dt>Duración</dt><dd>10 meses, de marzo a diciembre de 2027</dd></div>
+          <div><dt>Preparación previa</dt><dd>Noviembre 2026 a febrero 2027</dd></div>
           <div><dt>Estructura</dt><dd>4 fases y 12 módulos</dd></div>
           <div><dt>Lo imparten</dt><dd>UDIES y Expertos Chile SpA</dd></div>
           <div><dt>Horizonte</dt><dd>Hoja de ruta al 2050</dd></div>
@@ -261,8 +286,8 @@
           <a class="btn btn-ghost" href="#hoja-de-ruta">Ver la hoja de ruta</a>
         </div>
 
-        <div class="route" role="group" aria-label="Cronograma de 14 meses, de noviembre 2026 a diciembre 2027">
-          <h2>Los 14 meses de un vistazo</h2>
+        <div class="route" role="group" aria-label="Cronograma: preparación de noviembre 2026 a febrero 2027 y programa de 10 meses, de marzo a diciembre 2027">
+          <h2>Los 10 meses de un vistazo, con la preparación previa</h2>
           <div class="r14" aria-hidden="true">
             <span class="yr" style="grid-column:1 / 3">2026</span>
             <span class="yr" style="grid-column:3 / 15">2027</span>
@@ -270,17 +295,22 @@
             <span class="mo">E</span><span class="mo">F</span><span class="mo">M</span><span class="mo">A</span><span class="mo">M</span><span class="mo">J</span><span class="mo">J</span><span class="mo">A</span><span class="mo">S</span><span class="mo">O</span><span class="mo">N</span><span class="mo">D</span>
           </div>
 
+          <a class="phase-label" href="#fase-0"><b>Preparación</b> Convenios, cohorte, datos e instrumentos</a>
+          <div class="r14 track"><a class="bar prep" href="#fase-0" style="--s:1;--e:5;--i:0" aria-label="Preparación, noviembre 2026 a febrero 2027"></a></div>
+
           <a class="phase-label" href="#fase-1"><b>Fase 1</b> Diagnóstico sistémico y cohesión territorial</a>
-          <div class="r14 track"><a class="bar" href="#fase-1" style="--s:1;--e:4;--i:0" aria-label="Fase 1, noviembre 2026 a enero 2027"></a></div>
+          <div class="r14 track"><a class="bar" href="#fase-1" style="--s:5;--e:7;--i:1" aria-label="Fase 1, marzo a abril 2027"></a></div>
 
           <a class="phase-label" href="#fase-2"><b>Fase 2</b> Formulación de proyectos</a>
-          <div class="r14 track"><a class="bar" href="#fase-2" style="--s:4;--e:8;--i:1" aria-label="Fase 2, febrero a mayo 2027"></a></div>
+          <div class="r14 track"><a class="bar" href="#fase-2" style="--s:7;--e:10;--i:2" aria-label="Fase 2, mayo a julio 2027"></a></div>
 
           <a class="phase-label" href="#fase-3"><b>Fase 3</b> IA, pilotaje y financiamiento</a>
-          <div class="r14 track"><a class="bar" href="#fase-3" style="--s:8;--e:12;--i:2" aria-label="Fase 3, junio a septiembre 2027"></a></div>
+          <div class="r14 track"><a class="bar" href="#fase-3" style="--s:10;--e:13;--i:3" aria-label="Fase 3, agosto a octubre 2027"></a></div>
 
           <a class="phase-label" href="#fase-4"><b>Fase 4</b> Evaluación y red de liderazgo</a>
-          <div class="r14 track"><a class="bar" href="#fase-4" style="--s:12;--e:15;--i:3" aria-label="Fase 4, octubre a diciembre 2027"></a></div>
+          <div class="r14 track"><a class="bar" href="#fase-4" style="--s:13;--e:15;--i:4" aria-label="Fase 4, noviembre a diciembre 2027"></a></div>
+
+          <p class="after">Después de diciembre de 2027 hay seguimiento a los 3, 6 y 12 meses (marzo, junio y diciembre de 2028).</p>
         </div>
       </div>
     </section>
@@ -301,6 +331,7 @@
             <ul>
               <li>Obras públicas</li>
               <li>Infraestructura rígida</li>
+              <li>Equipos, software y espacios construidos, incluidas las plataformas digitales</li>
             </ul>
           </div>
           <div class="side psi">
@@ -310,14 +341,37 @@
               <li>Memoria histórica</li>
               <li>Hábitos de la comunidad</li>
               <li>Percepción del riesgo</li>
+              <li>Quién decide, con qué reglas y a quién beneficia</li>
+              <li>Quién gana y quién paga los costos</li>
             </ul>
           </div>
         </div>
+
+        <p class="intro">
+          A estas dos esferas se suman el <strong>entorno ecológico</strong> (suelo, agua, clima y amenazas
+          naturales) y la <strong>agencia</strong>: las personas y organizaciones que reproducen o cambian el
+          sistema. El programa lee cada territorio con esas cuatro lentes, sin quedarse en un solo indicador.
+        </p>
 
         <p class="result">
           Cuando llega un cambio o una crisis, esa brecha genera fricción, proyectos
           abandonados y gasto ineficiente. Además, buena parte de la planificación mira al período de gobierno y no a los próximos 25 años.
         </p>
+
+        <div class="traps">
+          <div>
+            <h3>Medir sin explicar</h3>
+            <p>Un indicador dice cuánto cambió, pero no por qué ni si el cambio se sostiene.</p>
+          </div>
+          <div>
+            <h3>Cambiar solo el objeto</h3>
+            <p>Instalar equipos o infraestructura sin tocar normas, hábitos, tarifas ni quién decide. Tener tecnología no es tener capacidad.</p>
+          </div>
+          <div>
+            <h3>Cambiar solo la conciencia</h3>
+            <p>Campañas sin infraestructura, sin incentivos y sin justicia en quién carga los costos.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -345,6 +399,10 @@
               Usan herramientas digitales sencillas para mapear la comunidad, recoger
               datos locales y ordenar la gestión, cumpliendo la ley de datos personales y criterios de uso responsable.
             </p>
+            <p>
+              La IA amplía lo que las personas pueden comprender y hacer juntas; no decide por ellas.
+              Se usa de forma acotada desde las primeras sesiones y se profundiza en la Fase 3.
+            </p>
           </div>
           <div class="pillar">
             <h3>Impacto medido en tres momentos</h3>
@@ -354,6 +412,7 @@
               <span style="--c:var(--wait)">Durante</span>
               <span style="--c:var(--stop)">Después</span>
             </div>
+            <p style="margin-top:.7em">Además, un desafío inicial y uno final comparables muestran qué puede hacer cada persona por sí misma.</p>
           </div>
         </div>
       </div>
@@ -409,7 +468,7 @@
         <div class="steps">
           <div>
             <h3>Se mide con datos y con la comunidad</h3>
-            <p>Datos administrativos, como en la investigación, y una autoevaluación participativa de lo que los datos no muestran: confianza, redes y percepción del riesgo.</p>
+            <p>Datos administrativos, como en la investigación, y una autoevaluación participativa de lo que los datos no muestran: confianza, redes y percepción del riesgo. Se mapea por barrio o sector, porque el promedio de una comuna oculta desigualdades.</p>
           </div>
           <div>
             <h3>Se agrupan las comunas parecidas</h3>
@@ -421,8 +480,8 @@
           </div>
         </div>
 
-        <p class="caveat">Es un perfil, no una nota: describe cómo funciona cada territorio y no si es mejor o peor que otro.</p>
-        <p class="cite">Basado en la tesis doctoral de Gustavo Godoy Uribe sobre sostenibilidad urbana en ciudades intermedias chilenas (Doctorado en Sostenibilidad, UNICEPES, 2025).</p>
+        <p class="caveat">Es un perfil, no una nota: describe cómo funciona cada territorio y no si es mejor o peor que otro. Y la resiliencia no siempre es buena: un sistema puede ser muy resistente a reproducir desigualdad o dependencia. Por eso se pregunta siempre: ¿resiliencia de qué, para quién y a costa de qué?</p>
+        <p class="cite">Basado en la tesis doctoral de Gustavo Godoy Uribe sobre sostenibilidad urbana en ciudades intermedias chilenas (Doctorado en Sostenibilidad, UNICEPES, 2025), y en el marco MECTP-SRT-T (versión 1.0 transversal, noviembre de 2026).</p>
       </div>
     </section>
 
@@ -446,8 +505,71 @@
       </div>
     </section>
 
+    <!-- MÉTODO DE APRENDIZAJE -->
+    <section class="sec" id="metodo">
+      <div class="wrap">
+        <h2>Se aprende resolviendo un desafío real del territorio</h2>
+        <p class="intro">
+          Cada participante trabaja desde el primer día con un problema de su propia comunidad.
+          El método, llamado HIA-T (Inteligencia Humana Aumentada para Territorios), recorre
+          seis ciclos que no son lineales: se vuelve atrás cuando aparecen nuevos antecedentes,
+          desacuerdos o cambios en el territorio. Es un enfoque en desarrollo, que el propio
+          programa pone a prueba y mide.
+        </p>
+
+        <ol class="cycles" style="padding:0">
+          <li><b>Ciclo 1</b><h3>Activar</h3><p>¿Qué sabemos y qué necesitamos comprender? Experiencias, conocimientos previos y problemas reales.</p><p class="where">Fase 1</p></li>
+          <li><b>Ciclo 2</b><h3>Interrogar</h3><p>¿Qué no estamos viendo? Preguntar, buscar información, explorar perspectivas, incluso con IA.</p><p class="where">Fases 1 y 2</p></li>
+          <li><b>Ciclo 3</b><h3>Contrastar</h3><p>¿Qué sabemos con evidencia y qué hay que verificar? Se cruza el conocimiento local con datos y fuentes.</p><p class="where">Fases 1 a 3</p></li>
+          <li><b>Ciclo 4</b><h3>Conectar</h3><p>¿Quiénes pueden contribuir y qué conexiones faltan? Personas, organizaciones, recursos y capacidades complementarias.</p><p class="where">Fases 1 a 3</p></li>
+          <li><b>Ciclo 5</b><h3>Cocrear</h3><p>¿Qué podemos construir juntos? Diseñar alternativas, priorizar, experimentar y probar soluciones.</p><p class="where">Fases 2 y 3</p></li>
+          <li><b>Ciclo 6</b><h3>Transferir</h3><p>¿Qué cambió y cómo lo sostenemos? Implementar, medir, comunicar y replicar capacidades.</p><p class="where">Fases 3 y 4</p></li>
+        </ol>
+
+        <ul class="levels" aria-label="Tres niveles de autonomía a lo largo del programa">
+          <li>Comprender y actuar<span>Fase 1</span></li>
+          <li>Conectar y cocrear<span>Fases 2 y 3</span></li>
+          <li>Orquestar y transformar<span>Fases 3 y 4</span></li>
+        </ul>
+
+        <h3 class="sub">Cinco laboratorios de trabajo</h3>
+        <ul class="mods labs">
+          <li><span class="m">Laboratorio 1<small>Módulo 2</small></span><span><strong>Inteligencia territorial</strong>Mapa de activos: personas, conocimientos, infraestructura, organizaciones, recursos naturales y servicios. Resultado: mapa de capacidades y oportunidades.</span></li>
+          <li><span class="m">Laboratorio 2<small>Módulo 3</small></span><span><strong>Inteligencia de redes</strong>Conexiones, actores puente, organizaciones aisladas y oportunidades de cooperación. Resultado: mapa de relaciones y brechas de articulación.</span></li>
+          <li><span class="m">Laboratorio 3<small>Módulo 4</small></span><span><strong>Deliberación y pensamiento crítico</strong>Exponer argumentos contrapuestos, identificar supuestos y decidir con evidencia. Resultado: un acuerdo o un conjunto de alternativas justificadas.</span></li>
+          <li><span class="m">Laboratorio 4<small>Módulos 7 y 9</small></span><span><strong>Innovación y cocreación</strong>Convertir un desafío territorial en una solución que pueda probarse. Resultado: prototipo, proyecto o piloto.</span></li>
+          <li><span class="m">Laboratorio 5<small>Módulos 8 y 10</small></span><span><strong>Gestión e impacto</strong>Responsables, recursos, compromisos, indicadores y seguimiento. Resultado: hoja de ruta de implementación.</span></li>
+        </ul>
+
+        <p class="session">Cada sesión se reparte, de forma orientativa, así: desafío y activación (10%), microcontenidos (10%), interacción individual con IA (20%), trabajo colectivo y deliberación (25%), construcción de la solución (25%) y reflexión y evaluación (10%). Casi nada es exposición.</p>
+
+        <div class="who">
+          <div>
+            <h3>Cinco principios</h3>
+            <ul>
+              <li><strong>Agencia humana:</strong> las personas mantienen el control de sus decisiones.</li>
+              <li><strong>Inteligencia distribuida:</strong> el conocimiento está en muchas personas y organizaciones.</li>
+              <li><strong>Colaboración verificable:</strong> las redes deben producir acuerdos y resultados, no solo contactos.</li>
+              <li><strong>Bien común:</strong> se considera equidad, sostenibilidad e inclusión, no solo eficiencia.</li>
+              <li><strong>Proporcionalidad tecnológica:</strong> si una conversación presencial resuelve mejor una necesidad, no se introduce una herramienta digital.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Salvaguardas</h3>
+            <ul>
+              <li>En toda decisión se pregunta quién gana, quién carga y quién queda fuera.</li>
+              <li>La IA no inventa relaciones ni decide por los participantes: toda conexión sugerida se verifica.</li>
+              <li>Lo que se conversa en los laboratorios no afecta la certificación.</li>
+              <li>Los datos se usan para el curso, la investigación anonimizada o la publicación solo con autorizaciones separadas.</li>
+              <li>No se infieren datos sensibles de las personas ni se las clasifica sin fundamento.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SIMBIOSIS TERRITORIAL -->
-    <section class="sec" id="simbiosis">
+    <section class="sec alt" id="simbiosis">
       <div class="wrap">
         <div class="symb">
           <div>
@@ -474,7 +596,7 @@
     </section>
 
     <!-- MARCO NORMATIVO -->
-    <section class="sec alt" id="marco-normativo">
+    <section class="sec" id="marco-normativo">
       <div class="wrap">
         <h2>Las leyes como un solo sistema, no como trámites sueltos</h2>
         <p class="intro">
@@ -514,8 +636,8 @@
             </tr>
             <tr>
               <th scope="row">Datos personales (Ley 21.719, plena vigencia desde el 1 de diciembre de 2026)</th>
-              <td data-l="Qué aporta al programa">Exige consentimiento, finalidad clara y seguridad al tratar datos de vecinas y vecinos. Los municipios también están obligados. El programa parte con un protocolo de datos antes de levantar información.</td>
-              <td data-l="Dónde se trabaja">Fases 1 a 4 (módulos 1, 2, 6 y 11)</td>
+              <td data-l="Qué aporta al programa">Exige consentimiento, finalidad clara y seguridad al tratar datos de vecinas y vecinos. Los municipios también están obligados. El programa parte con un protocolo de datos antes de levantar información, y sus consentimientos se revisan jurídicamente en la preparación.</td>
+              <td data-l="Dónde se trabaja">Preparación y fases 1 a 4 (módulos 1, 2, 6 y 11)</td>
             </tr>
             <tr>
               <th scope="row">Transformación digital y ciberseguridad (Leyes 21.180 y 21.663)</th>
@@ -534,7 +656,7 @@
     </section>
 
     <!-- PARA QUIÉN -->
-    <section class="sec" id="para-quien">
+    <section class="sec alt" id="para-quien">
       <div class="wrap">
         <h2>Para quienes hacen que el territorio funcione</h2>
         <div class="who">
@@ -547,6 +669,7 @@
               <li>Emprendedores y empresas locales que quieran trabajar en red con la comunidad</li>
               <li>Jóvenes, mujeres líderes y organizaciones de pueblos indígenas, para que la visión 2050 sea de varias generaciones</li>
             </ul>
+            <p style="margin-top:.8em;color:#2b4058">No se requiere experiencia previa con IA.</p>
           </div>
           <div>
             <h3>Quiénes pueden impulsarlo</h3>
@@ -555,7 +678,8 @@
               <li>Empresas, mediante Ley de Donaciones, RSE o valor compartido</li>
             </ul>
             <p style="margin-top:.8em;color:#2b4058">
-              Es un programa de intervención territorial de 14 meses, con métricas transparentes.
+              Es un programa de intervención territorial de 10 meses, con métricas transparentes.
+              Los convenios y las inscripciones se trabajan en la preparación, de noviembre de 2026 a febrero de 2027.
             </p>
           </div>
         </div>
@@ -563,77 +687,100 @@
     </section>
 
     <!-- HOJA DE RUTA -->
-    <section class="sec alt" id="hoja-de-ruta">
+    <section class="sec" id="hoja-de-ruta">
       <div class="wrap">
-        <h2>Cuatro fases a lo largo de los 14 meses del programa</h2>
+        <h2>Una preparación y cuatro fases a lo largo de 10 meses</h2>
         <p class="intro">
+          La preparación parte en noviembre de 2026 y el programa corre de marzo a diciembre de 2027.
           Cada fase termina con un entregable concreto. Abre una fase para ver sus módulos.
         </p>
         <div class="toolbar"><button type="button" id="toggle-all" aria-pressed="false">Abrir todas las fases</button></div>
 
         <div class="phases">
 
-          <details class="phase" id="fase-1" open>
+          <details class="phase" id="fase-0" open>
+            <summary>
+              <span class="pnum">0</span>
+              <span class="ptitle">Preparación: convenios, cohorte, datos e instrumentos<span class="pdate">Noviembre 2026 a febrero 2027 (antes de que parta el programa)</span></span>
+            </summary>
+            <div class="pbody">
+              <p>Es el tiempo para dejar todo resuelto antes del primer día: quiénes participan, con qué respaldo institucional, con qué reglas de datos y con qué instrumentos. Así las 10 semanas de marzo y abril se dedican al territorio y no a la logística.</p>
+              <ul class="mods">
+                <li><span class="m">Noviembre 2026<small>2ª quincena</small></span><span><strong>Decisiones de base</strong>Cerrar el público inicial, el territorio o los territorios de trabajo, el tamaño de cada cohorte (la referencia de diseño es de 20 a 25 personas) y la carga horaria. Confirmar el nombre del programa y verificar que no choque con marcas existentes antes de usarlo públicamente. Identificar municipios y organizaciones socias y enviarles la primera invitación.</span></li>
+                <li><span class="m">Diciembre 2026<small>Ley 21.719 en vigencia</small></span><span><strong>Datos personales y marco legal</strong>La ley de datos personales rige plenamente desde el 1 de diciembre. Se hace la revisión jurídica del protocolo de datos y de los textos de consentimiento (curso, investigación anonimizada y publicación, por separado). Se arma la línea base normativa de cada comuna candidata y se revisa el estado del proyecto de ley de IA.</span></li>
+                <li><span class="m">Dic 2026 a ene 2027<small>Convenios y fondos</small></span><span><strong>Convenios y calendario de financiamiento</strong>Firma de convenios o cartas de compromiso con municipios; contacto con Gobiernos Regionales y con empresas que quieran impulsar el programa (Ley de Donaciones, RSE, valor compartido). Se confirma el calendario 2027 de convocatorias (FNDR, FPA, SUBDERE y fondos concursables) para que el módulo de financiamiento trabaje con fechas reales y no estimadas.</span></li>
+                <li><span class="m">Enero 2027<small>Convocatoria</small></span><span><strong>Inscripción y selección</strong>Se abre la inscripción, se conversa con cada postulante y se conforma una cohorte diversa: dirigentes, profesionales municipales, jóvenes, mujeres líderes, pueblos indígenas y actores productivos locales. Se confirma el equipo docente y de facilitación y el calendario de sesiones de cada módulo.</span></li>
+                <li><span class="m">Febrero 2027<small>Mes de baja carga</small></span><span><strong>Instrumentos, pruebas e inducción</strong>Quedan listos el desafío inicial y final (mismo tipo de problema, escenarios distintos), la rúbrica de cuatro niveles, las fichas de mapeo y la autoevaluación participativa de resiliencia. Se prueban las herramientas digitales sencillas, se ensaya una sesión completa y se envía a cada participante una inducción breve con calendario y compromisos. Como febrero es mes de vacaciones, el trabajo es del equipo interno y la comunicación con participantes es liviana.</span></li>
+              </ul>
+              <div class="deliver"><b>Entregable</b>Programa listo para partir en marzo: convenios o cartas de compromiso, cohorte confirmada, protocolo de datos y consentimientos revisados, instrumentos de evaluación inicial y final, calendario de fondos 2027 y calendario de sesiones.</div>
+            </div>
+          </details>
+
+          <details class="phase" id="fase-1">
             <summary>
               <span class="pnum">1</span>
-              <span class="ptitle">Diagnóstico sistémico y cohesión territorial<span class="pdate">Noviembre 2026 a enero 2027 (3 meses)</span></span>
+              <span class="ptitle">Diagnóstico sistémico y cohesión territorial<span class="pdate">Marzo y abril 2027 (2 meses)</span></span>
             </summary>
             <div class="pbody">
               <p>Mapear la realidad local reconociendo cómo se relacionan la infraestructura (tecnósfera) y el tejido social (psicosfera). También se levanta la línea base normativa y se acuerda una primera visión compartida del territorio al 2050.</p>
+              <p class="cyc-line"><b>Ciclos de aprendizaje:</b> Activar, Interrogar, Contrastar y Conectar. Es la fase más intensa en ritmo, porque la preparación ya dejó resueltos los datos, los convenios y la cohorte.</p>
               <ul class="mods">
-                <li><span class="m">Módulo 1<small>Nov 2026</small></span><span><strong>El territorio vivo</strong>Introducción a la resiliencia comunitaria, a la psicosfera–tecnósfera y a los perfiles de resiliencia y transformabilidad. ¿Cómo leer nuestro entorno más allá del mapa? Incluye el mapa de normas e instrumentos que ordenan el territorio, las megatendencias hacia 2050 y el protocolo de datos personales que se acuerda antes de levantar información.</span></li>
-                <li><span class="m">Módulo 2<small>Dic 2026</small></span><span><strong>Mapeo participativo de riesgos, puntos ciegos y capacidades locales</strong>Identificación de vulnerabilidades ambientales, sociales y de servicios básicos, y de las capacidades productivas del territorio: oficios, emprendimientos y empresas. Cada comuna o sector obtiene su perfil de resiliencia y transformabilidad, y se agrupan las comunas parecidas. Los datos se recogen con consentimiento informado, según el protocolo del módulo 1.</span></li>
-                <li><span class="m">Módulo 3<small>Ene 2027</small></span><span><strong>Gobernanza y liderazgo relacional</strong>Gestión de conflictos, confianza comunitaria y articulación con municipios y servicios públicos. Se acuerda con los actores una visión preliminar del territorio al 2050.</span></li>
+                <li><span class="m">Módulo 1<small>Mar 2027</small></span><span><strong>El territorio vivo</strong>Introducción a la resiliencia comunitaria, a la psicosfera–tecnósfera y a los perfiles de resiliencia y transformabilidad. ¿Cómo leer nuestro entorno más allá del mapa? Incluye el mapa de normas e instrumentos que ordenan el territorio, las megatendencias hacia 2050 y el protocolo de datos personales que se acuerda antes de levantar información. Se leen los territorios con cuatro lentes (tecnósfera, psicosfera, entorno ecológico y agencia) y se pregunta siempre: ¿de qué, para quién y a costa de quién? La primera sesión incluye el desafío de evaluación inicial.</span></li>
+                <li><span class="m">Módulo 2<small>Abr 2027, 1ª quincena</small></span><span><strong>Mapeo participativo de riesgos, puntos ciegos y capacidades locales</strong>Identificación de vulnerabilidades ambientales, sociales y de servicios básicos, y de las capacidades productivas del territorio: oficios, emprendimientos y empresas. Cada comuna o sector obtiene su perfil de resiliencia y transformabilidad, y se agrupan las comunas parecidas. Los datos se recogen con consentimiento informado, según el protocolo del módulo 1.<span class="lab">Laboratorio 1, inteligencia territorial: el mapa mira lo que el territorio tiene (personas, saberes, organizaciones, recursos), no solo lo que le falta.</span></span></li>
+                <li><span class="m">Módulo 3<small>Abr 2027, 2ª quincena</small></span><span><strong>Gobernanza y liderazgo relacional</strong>Gestión de conflictos, confianza comunitaria y articulación con municipios y servicios públicos. Se acuerda con los actores una visión preliminar del territorio al 2050.<span class="lab">Laboratorio 2, inteligencia de redes: quiénes conectan, quiénes están aislados y qué cooperación falta. Se distingue una red con compromisos de una lista de contactos.</span></span></li>
               </ul>
-              <div class="deliver"><b>Entregable</b>Mapa inicial de puntos ciegos, capacidades comunitarias y complementariedades productivas y perfil de resiliencia y transformabilidad de cada sector o barrio participante. Incluye la línea base normativa, el protocolo de datos y la visión preliminar 2050.</div>
+              <div class="deliver"><b>Entregable</b>Mapa inicial de puntos ciegos, capacidades comunitarias y complementariedades productivas y perfil de resiliencia y transformabilidad de cada sector o barrio participante. Incluye la línea base normativa, el protocolo de datos, la visión preliminar 2050, el mapa de relaciones y el resultado del desafío inicial.</div>
             </div>
           </details>
 
           <details class="phase" id="fase-2">
             <summary>
               <span class="pnum">2</span>
-              <span class="ptitle">Formulación de proyectos e ingeniería social<span class="pdate">Febrero a mayo 2027 (4 meses)</span></span>
+              <span class="ptitle">Formulación de proyectos e ingeniería social<span class="pdate">Mayo a julio 2027 (3 meses)</span></span>
             </summary>
             <div class="pbody">
               <p>Traducir las necesidades de la Fase 1 en perfiles de proyecto, con el lenguaje técnico, metodológico y financiero que corresponde, y construir escenarios al 2050 que orienten qué proyectos priorizar.</p>
+              <p class="cyc-line"><b>Ciclos de aprendizaje:</b> Interrogar, Contrastar, Conectar y Cocrear. Julio coincide con las vacaciones de invierno, por lo que el módulo 6 se programa con sesiones más cortas y trabajo entre sesiones.</p>
               <ul class="mods">
-                <li><span class="m">Módulo 4<small>Feb a mar 2027</small></span><span><strong>Escenarios 2050, árbol de problemas y efecto dominó</strong>Análisis de causas raíz. ¿Por qué las soluciones “parche” vuelven a fallar? Criterios para priorizar los proyectos que generan trabajo local y que responden al perfil de cada comuna. Se construyen escenarios al 2050 (tendencial, deseable y de transformación) y se retrocede desde la visión al presente (backcasting) para decidir qué hacer primero.</span></li>
-                <li><span class="m">Módulo 5<small>Abr 2027</small></span><span><strong>Diseño de proyectos sostenibles</strong>Introducción al marco lógico, presupuestación realista e indicadores de impacto, incluidos empleo e ingresos locales. Cada proyecto se alinea con el plan de desarrollo comunal, el plan regulador, el plan de acción climática y los ODS, y declara su aporte a la visión 2050.</span></li>
-                <li><span class="m">Módulo 6<small>May 2027</small></span><span><strong>Tecnología y datos para dirigentes</strong>Herramientas de levantamiento móvil de datos y planillas simples de control. Incluye datos abiertos y acceso a la información pública (Ley 20.285), seguridad básica de la información y manejo de datos personales (Ley 21.719).</span></li>
+                <li><span class="m">Módulo 4<small>May 2027</small></span><span><strong>Escenarios 2050, árbol de problemas y efecto dominó</strong>Análisis de causas raíz. ¿Por qué las soluciones “parche” vuelven a fallar? Criterios para priorizar los proyectos que generan trabajo local y que responden al perfil de cada comuna. Se construyen escenarios al 2050 (tendencial, deseable y de transformación) y se retrocede desde la visión al presente (backcasting) para decidir qué hacer primero. Cada causa raíz se formula como mecanismo: “cuando esta infraestructura se encuentra con esta norma o hábito, y los actores responden de este modo, tiende a ocurrir esto, salvo que…”. Ejemplo: se tiene el equipo, pero el protocolo no se ensaya ni se delega, y la respuesta llega tarde.<span class="lab">Laboratorio 3, deliberación y pensamiento crítico: argumentos contrapuestos, supuestos explícitos y decisiones con evidencia.</span></span></li>
+                <li><span class="m">Módulo 5<small>Jun 2027</small></span><span><strong>Diseño de proyectos sostenibles</strong>Introducción al marco lógico, presupuestación realista e indicadores de impacto, incluidos empleo e ingresos locales. Cada proyecto se alinea con el plan de desarrollo comunal, el plan regulador, el plan de acción climática y los ODS, y declara su aporte a la visión 2050. Antes de diseñar, cada equipo define sus criterios de aceptación (cómo reconocerá que el proyecto está bien hecho) y responde quién gana, quién carga y quién queda fuera.</span></li>
+                <li><span class="m">Módulo 6<small>Jul 2027</small></span><span><strong>Tecnología y datos para dirigentes</strong>Herramientas de levantamiento móvil de datos y planillas simples de control. Incluye datos abiertos y acceso a la información pública (Ley 20.285), seguridad básica de la información y manejo de datos personales (Ley 21.719). Se trabaja con un ecosistema sencillo y accesible (formularios, planillas y carpetas compartidas, mapas, tableros de indicadores, análisis de redes y mensajería) y se elige solo lo proporcional al problema y a la conectividad de cada comunidad.</span></li>
               </ul>
-              <div class="deliver"><b>Entregable</b>Dossier de anteproyectos comunitarios, listos para revisión y ajuste técnico. Incluye los escenarios 2050 de cada comuna o clúster.</div>
+              <div class="deliver"><b>Entregable</b>Dossier de anteproyectos comunitarios, listos para revisión y ajuste técnico. Incluye los escenarios 2050 de cada comuna o clúster y los criterios de aceptación de cada proyecto.</div>
             </div>
           </details>
 
           <details class="phase" id="fase-3">
             <summary>
               <span class="pnum">3</span>
-              <span class="ptitle">Inteligencia artificial, pilotaje y financiamiento<span class="pdate">Junio a septiembre 2027 (4 meses)</span></span>
+              <span class="ptitle">Inteligencia artificial, pilotaje y financiamiento<span class="pdate">Agosto a octubre 2027 (3 meses)</span></span>
             </summary>
             <div class="pbody">
               <p>Potenciar la formulación con IA adaptada y postular a fondos de financiamiento comunal, regional y privado.</p>
+              <p class="cyc-line"><b>Ciclos de aprendizaje:</b> Contrastar, Conectar, Cocrear y Transferir. Los pilotajes de octubre dan tiempo para medirlos en la Fase 4.</p>
               <ul class="mods">
-                <li><span class="m">Módulo 7<small>Jun a jul 2027</small></span><span><strong>IA aplicada a la gestión territorial</strong>Práctica con herramientas de IA para redactar proyectos, fundamentarlos técnicamente y sistematizar actas y encuestas. Con reglas de uso responsable: verificación humana de todo lo que genera la IA, transparencia sobre su uso y ningún dato personal en herramientas abiertas. Los criterios siguen la lógica por niveles de riesgo del proyecto de ley de IA y se actualizan si se aprueba antes del módulo.</span></li>
-                <li><span class="m">Módulo 8<small>Ago 2027</small></span><span><strong>Estrategias de financiamiento y alianzas</strong>Mapeo de fuentes públicas (FNDR 8%, FPA, SUBDERE, fondos municipales) y privadas (RSE y fondos concursables). Alianzas entre comunidad, municipio y empresas (compras locales, convenios y valor compartido) y entre comunas del mismo clúster. Incluye oportunidades de economía circular: la Ley REP (20.920) genera demanda de gestión de residuos, reciclaje y reutilización que puede convertirse en empleo local.</span></li>
-                <li><span class="m">Módulo 9<small>Sep 2027</small></span><span><strong>Pilotaje en terreno (SAATS)</strong>Pruebas a pequeña escala de los proyectos diseñados, con al menos un encadenamiento productivo local cuando corresponda.</span></li>
+                <li><span class="m">Módulo 7<small>Ago 2027</small></span><span><strong>IA aplicada a la gestión territorial</strong>Práctica con herramientas de IA para redactar proyectos, fundamentarlos técnicamente y sistematizar actas y encuestas. Con reglas de uso responsable: verificación humana de todo lo que genera la IA, transparencia sobre su uso y ningún dato personal en herramientas abiertas. Los criterios siguen la lógica por niveles de riesgo del proyecto de ley de IA y se actualizan si se aprueba antes del módulo. La interacción se practica en cinco niveles: solicitar, contextualizar, dirigir, cuestionar y orquestar. La IA propone y las personas deciden. Se compara el trabajo con y sin IA, y se valora lo que cada persona puede explicar y defender, no la cantidad de instrucciones que sabe escribir.<span class="lab">Laboratorio 4, innovación y cocreación: de un desafío territorial a una solución que pueda probarse.</span></span></li>
+                <li><span class="m">Módulo 8<small>Sep 2027</small></span><span><strong>Estrategias de financiamiento y alianzas</strong>Mapeo de fuentes públicas (FNDR 8%, FPA, SUBDERE, fondos municipales) y privadas (RSE y fondos concursables). Alianzas entre comunidad, municipio y empresas (compras locales, convenios y valor compartido) y entre comunas del mismo clúster. Incluye oportunidades de economía circular: la Ley REP (20.920) genera demanda de gestión de residuos, reciclaje y reutilización que puede convertirse en empleo local. Se trabaja con el calendario de convocatorias confirmado en la preparación. Cada alianza queda con acuerdos, roles y seguimiento.<span class="lab">Laboratorio 5, gestión e impacto: responsables, recursos, compromisos e indicadores.</span></span></li>
+                <li><span class="m">Módulo 9<small>Oct 2027</small></span><span><strong>Pilotaje en terreno (SAATS)</strong>Pruebas a pequeña escala de los proyectos diseñados, con al menos un encadenamiento productivo local cuando corresponda. El pilotaje es el primer paso real de la hoja de ruta 2050 de cada comuna o clúster.</span></li>
               </ul>
-              <div class="deliver"><b>Entregable</b>Proyectos postulados o presentados a mesas de inversión y al municipio.</div>
+              <div class="deliver"><b>Entregable</b>Proyectos postulados o presentados a mesas de inversión y al municipio, y al menos un pilotaje en marcha por comuna o clúster.</div>
             </div>
           </details>
 
           <details class="phase" id="fase-4">
             <summary>
               <span class="pnum">4</span>
-              <span class="ptitle">Evaluar, sistematizar y formar la red de liderazgo<span class="pdate">Octubre a diciembre 2027 (3 meses)</span></span>
+              <span class="ptitle">Evaluar, sistematizar y formar la red de liderazgo<span class="pdate">Noviembre y diciembre 2027 (2 meses)</span></span>
             </summary>
             <div class="pbody">
               <p>Evaluar los aprendizajes, medir la resiliencia instalada y consolidar una red permanente de liderazgo territorial.</p>
+              <p class="cyc-line"><b>Ciclo de aprendizaje:</b> Transferir. Son dos meses cortos, por eso la evaluación y la sistematización parten con los pilotajes de octubre y no esperan a que termine el año.</p>
               <ul class="mods">
-                <li><span class="m">Módulo 10<small>Oct 2027</small></span><span><strong>Evaluación en los tres momentos</strong>Medición de resultados (antes, durante y después), incluidos empleo e ingresos frente a la línea base, nueva medición del perfil de cada comuna y lecciones aprendidas. También se revisa cuánto se acercó cada territorio a su escenario deseado.</span></li>
-                <li><span class="m">Módulo 11<small>Nov 2027</small></span><span><strong>Sistematización y hoja de ruta 2050</strong>Informes comunitarios para devolver los resultados a la comunidad y a las autoridades. Cada comuna o clúster cierra con una hoja de ruta 2030–2040–2050 y una propuesta para incorporarla a sus instrumentos de planificación. Las publicaciones respetan la protección de datos personales.</span></li>
-                <li><span class="m">Módulo 12<small>Dic 2027</small></span><span><strong>Seminario de cierre y constitución de la red</strong>Entrega de certificaciones, incorporación de actores productivos locales a la red y firma de compromisos de continuidad. La red opera como observatorio territorial, con revisión periódica de la hoja de ruta.</span></li>
+                <li><span class="m">Módulo 10<small>Nov 2027, 1ª quincena</small></span><span><strong>Evaluación en los tres momentos</strong>Medición de resultados (antes, durante y después), incluidos empleo e ingresos frente a la línea base, nueva medición del perfil de cada comuna y lecciones aprendidas. También se revisa cuánto se acercó cada territorio a su escenario deseado. Incluye el desafío final: el mismo tipo de problema que el inicial, en un escenario distinto y sin que el equipo indique los pasos, evaluado con una rúbrica de cuatro niveles (inicial, en desarrollo, autónomo y avanzado) según la tarea. Se registra qué cambió de verdad: adoptar una herramienta sin cambiar reglas, responsables ni controles cuenta como reproducción del sistema, no como transformación.</span></li>
+                <li><span class="m">Módulo 11<small>Nov 2027, 2ª quincena</small></span><span><strong>Sistematización y hoja de ruta 2050</strong>Informes comunitarios para devolver los resultados a la comunidad y a las autoridades. Cada comuna o clúster cierra con una hoja de ruta 2030–2040–2050 y una propuesta para incorporarla a sus instrumentos de planificación. Las publicaciones respetan la protección de datos personales.</span></li>
+                <li><span class="m">Módulo 12<small>Dic 2027</small></span><span><strong>Seminario de cierre y constitución de la red</strong>Entrega de certificaciones, incorporación de actores productivos locales a la red y firma de compromisos de continuidad. La red opera como observatorio territorial, con revisión periódica de la hoja de ruta y seguimiento a los 3, 6 y 12 meses (marzo, junio y diciembre de 2028), donde se registra si lo cambiado persiste, se modificó, se abandonó o se extendió.</span></li>
               </ul>
-              <div class="deliver"><b>Entregable</b>Informe final de impacto territorial, hoja de ruta 2050 por comuna o clúster, certificación de dirigentes y red de liderazgo constituida.</div>
+              <div class="deliver"><b>Entregable</b>Informe final de impacto territorial, hoja de ruta 2050 por comuna o clúster, certificación de dirigentes, red de liderazgo constituida y calendario de seguimiento 2028.</div>
             </div>
           </details>
 
@@ -642,10 +789,10 @@
     </section>
 
     <!-- INDICADORES -->
-    <section class="sec" id="indicadores">
+    <section class="sec alt" id="indicadores">
       <div class="wrap">
         <h2>Cómo rendimos cuentas a la comunidad y a quienes financian</h2>
-        <p class="intro">Nueve dimensiones, cada una con un indicador que se puede verificar.</p>
+        <p class="intro">Doce dimensiones, cada una con un indicador que se puede verificar.</p>
 
         <table>
           <thead>
@@ -656,6 +803,11 @@
               <th scope="row">Capacitación humana</th>
               <td data-l="Indicador">Número de dirigentes y profesionales formados (mínimo 75% de asistencia)</td>
               <td data-l="Impacto esperado">Más capacidad técnica y de gestión en el liderazgo local.</td>
+            </tr>
+            <tr>
+              <th scope="row">Aprendizaje y autonomía</th>
+              <td data-l="Indicador">Desempeño de cada participante en el desafío inicial y en el final (mismo tipo de problema, escenarios distintos), con rúbrica de cuatro niveles</td>
+              <td data-l="Impacto esperado">Evidencia de cuánto puede hacer cada persona por sí misma, no de cuánto recuerda del programa.</td>
             </tr>
             <tr>
               <th scope="row">Proyectos formulados</th>
@@ -671,6 +823,11 @@
               <th scope="row">Articulación institucional</th>
               <td data-l="Indicador">Mesas de trabajo sostenidas entre comunidad, municipio y UDIES</td>
               <td data-l="Impacto esperado">Alianzas formalizadas e inversión territorial canalizada.</td>
+            </tr>
+            <tr>
+              <th scope="row">Capital relacional</th>
+              <td data-l="Indicador">Nuevas relaciones de colaboración verificadas, con acuerdos, responsables y seguimiento, y diversidad de actores representados</td>
+              <td data-l="Impacto esperado">Redes que producen resultados, no solo contactos.</td>
             </tr>
             <tr>
               <th scope="row">Simbiosis territorial y empleo</th>
@@ -693,12 +850,19 @@
               <td data-l="Impacto esperado">Más confianza de la comunidad y menos riesgo legal para dirigentes, municipios y financiadores.</td>
             </tr>
             <tr>
+              <th scope="row">Equidad</th>
+              <td data-l="Indicador">Quiénes participan y quiénes se benefician de cada iniciativa (mujeres, jóvenes, pueblos indígenas, sectores periféricos), frente a quiénes quedaron fuera</td>
+              <td data-l="Impacto esperado">Que las mejoras no concentren beneficios ni trasladen costos a los mismos de siempre.</td>
+            </tr>
+            <tr>
               <th scope="row">Continuidad de la red</th>
-              <td data-l="Indicador">Red u observatorio constituido, con calendario de revisión de la hoja de ruta y compromisos de continuidad firmados</td>
+              <td data-l="Indicador">Red u observatorio constituido, con calendario de revisión de la hoja de ruta, compromisos de continuidad firmados y seguimiento a los 3, 6 y 12 meses (2028) de lo que persiste, se modifica o se abandona</td>
               <td data-l="Impacto esperado">El trabajo sigue después de diciembre de 2027.</td>
             </tr>
           </tbody>
         </table>
+
+        <p class="fine">Más contactos no significan mejores redes, más reuniones no significan más participación y más proyectos no significan más bienestar. Por eso se mide la calidad, la reciprocidad y la distribución de oportunidades, y no el volumen de lo producido.</p>
 
         <div class="fund">
           <h3>Fuentes de financiamiento que se trabajan en el programa</h3>
@@ -719,6 +883,10 @@
           municipio o una empresa con programa de inversión social. Te contamos cómo se
           adapta a tu comunidad.
         </p>
+        <p>
+          Los convenios y las inscripciones se trabajan entre noviembre de 2026 y febrero de 2027,
+          antes de que el programa parta en marzo. Mientras antes escribas, más tiempo hay para preparar tu territorio.
+        </p>
         <div class="btn-row">
           <!-- Cambia este enlace por el formulario de inscripción cuando esté listo -->
           <a class="btn btn-main" href="https://linktr.ee/udies" target="_blank" rel="noopener">Solicitar información</a>
@@ -733,7 +901,7 @@
 
         <p class="note">
           Programa organizado por UDIES y Expertos Chile SpA, en articulación con redes
-          comunitarias y municipales. Las fechas y contenidos pueden ajustarse según cada territorio. Las referencias normativas son informativas y no constituyen asesoría jurídica; el proyecto de ley de inteligencia artificial está en tramitación y puede cambiar.
+          comunitarias y municipales. Las fechas y contenidos pueden ajustarse según cada territorio. Las referencias normativas son informativas y no constituyen asesoría jurídica; el proyecto de ley de inteligencia artificial está en tramitación y puede cambiar. Los marcos conceptuales del programa (MECTP-SRT-T y HIA-T) están en desarrollo y se ponen a prueba durante su ejecución: no se prometen resultados garantizados.
         </p>
       </div>
     </section>
@@ -750,6 +918,10 @@
         <p class="apa">
           Godoy Uribe, G. (2025). <em>TÍTULO EXACTO DE LA TESIS</em> [Tesis doctoral, Universidad
           Internacional de Ciencias, Educación y Sostenibilidad (UNICEPES)]. REPOSITORIO O URL, si está disponible.
+        </p>
+        <p class="apa">
+          Godoy Uribe, G. (2026). <em>MECTP-SRT-T: Marco estratificado de interacción tecnosfera–psicosfera para la sostenibilidad, resiliencia y transformabilidad (versión 1.0 transversal)</em>
+          [Documento de trabajo]. URL O REPOSITORIO, si se publica.
         </p>
       </div>
     </section>
